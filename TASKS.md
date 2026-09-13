@@ -8,8 +8,8 @@
 | TASK-003 | DONE | GPT-5.6 Terra | Medium |
 | TASK-004 | DONE | GPT-5.6 Sol | Medium |
 | TASK-005 | DONE | GPT-5.6 Terra | Medium |
-| TASK-006 | TODO | GPT-5.6 Terra | Low |
-| TASK-007 | BLOCKED | GPT-5.6 Terra | Medium |
+| TASK-006 | DONE | GPT-5.6 Terra | Low |
+| TASK-007 | TODO | GPT-5.6 Terra | Medium |
 | TASK-008 | BLOCKED | GPT-5.6 Sol | Medium |
 | TASK-009 | BLOCKED | GPT-5.6 Sol | High |
 | TASK-010 | BLOCKED | GPT-5.6 Sol | High |

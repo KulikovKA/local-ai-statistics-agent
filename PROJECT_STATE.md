@@ -2,7 +2,7 @@
 
 ## Текущая задача
 
-TASK-006 — Benchmark локальной модели.
+TASK-007 — Выбор VS Code Agent.
 
 ## Завершённые задачи
 
@@ -17,6 +17,8 @@ TASK-003 — Установка локального runtime.
 TASK-004 — Выбор локальной модели.
 
 TASK-005 — Установка модели.
+
+TASK-006 — Benchmark локальной модели.
 
 ## Техническое состояние
 
@@ -36,10 +38,12 @@ TASK-004 выбрала Qwen3-Coder-30B-A3B-Instruct в официальном O
 
 TASK-005 установила единственный выбранный артефакт `qwen3-coder:30b` (18 556 700 761 bytes, Q4_K_M, digest `sha256:06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca`, Apache-2.0). Локальные `/api/tags` и `/v1/models` видят одну модель. `POST /api/chat` на loopback с `num_ctx=16384` успешно выполнил tool call; в момент проверки backend был `100% CPU`, а runner использовал 17,14 GiB working set / 18,73 GiB private memory. Скорость и устойчивость context — предмет TASK-006.
 
+TASK-006 измерила `qwen3-coder:30b` через локальный `/api/generate` в cold start: 4K, 8K и 16K успешно завершились. При 16K получены 8,507 с load, 64,017 ток/с prompt, 19,084 ток/с generation, 18,862 GiB peak working set и 19,415 GiB peak private memory; исходные данные и методика — в `docs/BENCHMARKS.md`. Модель работает на CPU; Vulkan/offload не наблюдался. 16K принят как начальный рабочий context для короткого запроса, fallback остаётся 8K; заполненный context и многошаговый agent loop ещё не проверены.
+
 ## Известные проблемы и блокеры
 
-Готовая VS Code-интеграция остаётся отдельной задачей. Qwen3-Coder-30B-A3B локально загружается и выполняет tools при 16K, но фактический backend в проверке — CPU, а не Vulkan; производительность ещё не измерялась. У существующего startup-процесса Ollama не подтверждён `OLLAMA_NO_CLOUD=1`; полная фактическая offline-изоляция остаётся TASK-011.
+Готовая VS Code-интеграция остаётся отдельной задачей. Qwen3-Coder-30B-A3B локально загружается, выполняет tools и измерена при 4K/8K/16K, но фактический backend — CPU, а не Vulkan; заполненный 16K context и многошаговый agent loop ещё не проверены. У существующего startup-процесса Ollama не подтверждён `OLLAMA_NO_CLOUD=1`; полная фактическая offline-изоляция остаётся TASK-011.
 
 ## Следующая задача
 
-TASK-006 — Benchmark локальной модели.
+TASK-007 — Выбор VS Code Agent.
