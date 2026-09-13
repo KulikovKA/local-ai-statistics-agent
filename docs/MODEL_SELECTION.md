@@ -85,3 +85,9 @@ Qwen официально заявляет специальный function-call 
 * fallback при memory pressure: 8192;
 * cloud-варианты запрещены;
 * после установки проверить digest, license metadata, локальный API, tools и фактическое использование CPU/Vulkan.
+
+## Фактический результат TASK-005
+
+13 сентября 2026 года установлен ровно один артефакт `qwen3-coder:30b`: Q4_K_M, 30,5B, 18 556 700 761 bytes, digest `sha256:06c1097efce0431c2045fe7b2e5108366e43bee1b4603a7aded8f21689e90bca`. Локальные metadata Ollama подтвердили Apache-2.0 и capability `tools`.
+
+Через `POST http://127.0.0.1:11434/api/chat` с `options.num_ctx=16384` модель успешно вызвала `get_project_status` без аргументов. Во время этого запроса `ollama ps` показал `100% CPU`, context 16 384 и размер загрузки 20 GB; runner занял 17,14 GiB working set / 18,73 GiB private memory. Vulkan/offload не был задействован. Это подтверждает возможность локальной загрузки и tools, но не заменяет benchmark TASK-006.
