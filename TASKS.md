@@ -3,8 +3,8 @@
 | Задача | Статус | Рекомендуемая модель | Reasoning |
 | --- | --- | --- | --- |
 | TASK-000 | DONE | GPT-5.6 Terra | Low |
-| TASK-001 | TODO | GPT-5.6 Terra | Low |
-| TASK-002 | BLOCKED | GPT-5.6 Sol | Medium |
+| TASK-001 | DONE | GPT-5.6 Terra | Low |
+| TASK-002 | TODO | GPT-5.6 Sol | Medium |
 | TASK-003 | BLOCKED | GPT-5.6 Terra | Medium |
 | TASK-004 | BLOCKED | GPT-5.6 Sol | Medium |
 | TASK-005 | BLOCKED | GPT-5.6 Terra | Medium |
