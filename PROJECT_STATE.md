@@ -2,7 +2,7 @@
 
 ## Текущая задача
 
-TASK-007 — Выбор VS Code Agent.
+TASK-008 — Интеграция локального endpoint.
 
 ## Завершённые задачи
 
@@ -20,6 +20,8 @@ TASK-005 — Установка модели.
 
 TASK-006 — Benchmark локальной модели.
 
+TASK-007 — Выбор VS Code Agent.
+
 ## Техническое состояние
 
 Созданы структура проекта, Conda-окружение `local-ai-statistics` и Jupyter kernel. Проверены Python 3.12.14, импорт базовых библиотек, Jupyter, Jupytext и smoke test без GUI. Локальная модель установлена и проверена; VS Code AI-расширение ещё не устанавливалось.
@@ -28,7 +30,7 @@ TASK-001 зафиксировала Windows 11 Pro build 26200, AMD Ryzen 7 8845
 
 ## Принятые решения
 
-Основное окружение называется `local-ai-statistics`, целевая версия Python — 3.12. Главный пользовательский интерфейс — обычный `.ipynb` в Jupyter UI VS Code. Локальный AI-агент должен быть доступен в боковой панели VS Code; основной кандидат для Agent layer — официальная интеграция Qwen Code, подлежащая проверке в отдельной задаче.
+Основное окружение называется `local-ai-statistics`, целевая версия Python — 3.12. Главный пользовательский интерфейс — обычный `.ipynb` в Jupyter UI VS Code. Для Agent layer выбрано и установлено официальное расширение Qwen Code Companion 0.23.3; его sidebar располагается рядом с notebook.
 
 Слои целевой архитектуры: VS Code / Jupyter UI, Qwen Code Agent, локальный OpenAI-совместимый API, локальный runtime, локальная модель и Conda execution environment. `nbformat` и Jupytext — внутренние механизмы безопасного изменения notebook; парный `.py` не является основным интерфейсом пользователя.
 
@@ -40,10 +42,12 @@ TASK-005 установила единственный выбранный арт
 
 TASK-006 измерила `qwen3-coder:30b` через локальный `/api/generate` в cold start: 4K, 8K и 16K успешно завершились. При 16K получены 8,507 с load, 64,017 ток/с prompt, 19,084 ток/с generation, 18,862 GiB peak working set и 19,415 GiB peak private memory; исходные данные и методика — в `docs/BENCHMARKS.md`. Модель работает на CPU; Vulkan/offload не наблюдался. 16K принят как начальный рабочий context для короткого запроса, fallback остаётся 8K; заполненный context и многошаговый agent loop ещё не проверены.
 
+TASK-007 выбрала официальный Qwen Code Companion (`qwenlm.qwen-code-vscode-ide-companion`) 0.23.3. Расширение установлено, активировано VS Code и подтверждённо регистрирует sidebar, workspace/file context и native diff-команды; bundled Qwen Code имеет file и shell tools. `~/.qwen/settings.json` ещё не создан, cloud-onboarding не выполнялся, endpoint не настроен. Локальный provider настраивается только в TASK-008.
+
 ## Известные проблемы и блокеры
 
-Готовая VS Code-интеграция остаётся отдельной задачей. Qwen3-Coder-30B-A3B локально загружается, выполняет tools и измерена при 4K/8K/16K, но фактический backend — CPU, а не Vulkan; заполненный 16K context и многошаговый agent loop ещё не проверены. У существующего startup-процесса Ollama не подтверждён `OLLAMA_NO_CLOUD=1`; полная фактическая offline-изоляция остаётся TASK-011.
+Qwen Code Companion имеет статус Preview/Beta. Фактический запрос из sidebar к Ollama, безопасная работа с notebook и полный agent loop ещё не проверены. Qwen3-Coder-30B-A3B работает на CPU, а не Vulkan. У существующего startup-процесса Ollama не подтверждён `OLLAMA_NO_CLOUD=1`; полная фактическая offline-изоляция остаётся TASK-011.
 
 ## Следующая задача
 
-TASK-007 — Выбор VS Code Agent.
+TASK-008 — Интеграция локального endpoint.

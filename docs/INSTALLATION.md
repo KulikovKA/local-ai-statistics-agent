@@ -21,3 +21,13 @@
 ```
 
 Не выполняйте `ollama signin` и не выбирайте cloud-модели. Полная проверка offline-режима и отсутствие cloud fallback запланированы в TASK-011.
+
+## VS Code Agent
+
+TASK-007 выбрала официальное расширение Qwen Code Companion. Установка:
+
+```powershell
+code --install-extension qwenlm.qwen-code-vscode-ide-companion
+```
+
+Проверенная версия — 0.23.3. До настройки локального provider в TASK-008 не проходите cloud-onboarding и не выбирайте Coding Plan. Причины выбора и ограничения описаны в [VSCODE_AGENT.md](VSCODE_AGENT.md).
