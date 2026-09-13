@@ -9,13 +9,17 @@
 | TASK-004 | BLOCKED | GPT-5.6 Sol | Medium |
 | TASK-005 | BLOCKED | GPT-5.6 Terra | Medium |
 | TASK-006 | BLOCKED | GPT-5.6 Terra | Low |
-| TASK-007 | BLOCKED | GPT-5.6 Sol | Medium |
-| TASK-008 | BLOCKED | GPT-5.6 Sol | High |
-| TASK-009 | BLOCKED | GPT-5.6 Sol | Medium |
-| TASK-010 | BLOCKED | GPT-5.6 Terra | Medium |
-| TASK-011 | BLOCKED | GPT-5.6 Sol | Medium |
-| TASK-012 | BLOCKED | GPT-5.6 Terra | Low |
-| TASK-013 | BLOCKED | GPT-5.6 Terra | Low |
-| TASK-014 | BLOCKED | GPT-6 Astra | Low |
+| TASK-007 | BLOCKED | GPT-5.6 Terra | Medium |
+| TASK-008 | BLOCKED | GPT-5.6 Sol | Medium |
+| TASK-009 | BLOCKED | GPT-5.6 Sol | High |
+| TASK-010 | BLOCKED | GPT-5.6 Sol | High |
+| TASK-011 | BLOCKED | GPT-5.6 Sol | High |
+| TASK-012 | BLOCKED | GPT-5.6 Sol | Medium |
+| TASK-013 | BLOCKED | GPT-5.6 Terra | Medium |
+| TASK-014 | BLOCKED | GPT-5.6 Sol | Medium |
+| TASK-015 | BLOCKED | GPT-5.6 Terra | Low |
+| TASK-016 | BLOCKED | GPT-6 Astra | Low |
 
 Разблокирование выполняется только после успешного завершения непосредственно предшествующей задачи.
+
+После TASK-006 последовательность: выбор готовой VS Code-интеграции → настройка локального endpoint → интеграция notebook → полный цикл агента → проверка офлайн-режима → launchers → статистический пример → документация → публикация → финальная проверка.

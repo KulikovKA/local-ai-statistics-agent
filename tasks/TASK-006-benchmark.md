@@ -1,4 +1,4 @@
-# TASK-006 — Benchmark
+# TASK-006 — Бенчмарк
 
 ## Цель
 
@@ -38,7 +38,7 @@
 
 ## Следующая задача
 
-TASK-007 — VS Code local agent.
+TASK-007 — Выбор VS Code Agent.
 
 ## Рекомендуемая модель Codex
 
