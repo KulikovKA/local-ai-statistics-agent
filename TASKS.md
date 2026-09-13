@@ -5,8 +5,8 @@
 | TASK-000 | DONE | GPT-5.6 Terra | Low |
 | TASK-001 | DONE | GPT-5.6 Terra | Low |
 | TASK-002 | DONE | GPT-5.6 Sol | Medium |
-| TASK-003 | TODO | GPT-5.6 Terra | Medium |
-| TASK-004 | BLOCKED | GPT-5.6 Sol | Medium |
+| TASK-003 | DONE | GPT-5.6 Terra | Medium |
+| TASK-004 | TODO | GPT-5.6 Sol | Medium |
 | TASK-005 | BLOCKED | GPT-5.6 Terra | Medium |
 | TASK-006 | BLOCKED | GPT-5.6 Terra | Low |
 | TASK-007 | BLOCKED | GPT-5.6 Terra | Medium |
