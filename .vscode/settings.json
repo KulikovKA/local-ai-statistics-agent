@@ -1,0 +1,10 @@
+{
+  "python.defaultInterpreterPath": "${command:python.interpreterPath}",
+  "python.terminal.activateEnvironment": true,
+  "python.analysis.typeCheckingMode": "basic",
+  "editor.formatOnSave": true,
+  "editor.rulers": [88],
+  "jupyter.notebookFileRoot": "${workspaceFolder}",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupytext.formats": "ipynb,py:percent"
+}

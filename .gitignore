@@ -1,0 +1,26 @@
+# Секреты и локальная конфигурация
+.env
+.env.*
+!.env.example
+
+# Conda и Python
+.conda/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.jupyter/
+
+# Модели, данные и результаты
+models/
+*.gguf
+data/
+artifacts/
+benchmarks/*.json
+benchmarks/*.csv
+
+# IDE и ОС
+.vscode/*.log
+.DS_Store
+Thumbs.db
